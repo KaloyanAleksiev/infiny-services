@@ -51,7 +51,7 @@
 export default {
     props: {
         services: Array,
-        loading: true
+        loading: false
     },
     data() {
         return {
