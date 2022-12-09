@@ -39,7 +39,7 @@ class GuzzleClientServiceProvider extends ServiceProvider
             $stack = $this->setLoggingHandler($messageFormats);
 
             return function ($config) use ($stack) {
-                return new Client(array_merge($config, ['handler' => $stack]));
+                return new Client(array_merge($config, (config('app.debug')) ? ['handler' => $stack] : []));
             };
         });
     }
